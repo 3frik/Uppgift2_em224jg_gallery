@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eriks Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="horizontalContainer">
+            <img id="erikFace" class="headerPicture" src="sources/Erik.png">
+            <div>
+                <h1>Erik's Gallery</h1>
+                <h3>A compilation of my miniature painting production</h3>
+            </div>
+        </div>
+        <nav>
+            <img id="hamburguerIcon" class="headerPicture" src="sources/Hamburger_icon.svg.webp" alt="Hamburguer menu icon">
+            <ul id="navMenu">
+                <li><a href="#about">About me</a></li>
+                <li><a href="#fantasySection">Warhammer Fantasy</a>
+                    <ul class="submenu">
+                        <li><a href="#DarkElvesSection">Dark Elves</a></li>
+                        <li><a href="#FantasyBretonniaSection">Bretonnia</a></li>
+                        <li><a href="#LizardmenSection">Lizardmen</a></li>
+                    </ul>
+                </li>
+                <li><a href="#40KSection">Warhammer 40000</a>
+                    <ul class="submenu">
+                        <li>Eldar</li>
+                        <li>Chaos Marines</li>
+                        <li>Sisters of battle</li>
+                    </ul>
+                </li>
+                <li><a href="#mordheimSection">Mordheim</a>
+                    <ul class="submenu">
+                        <li>Bretonnia</li>
+                        <li>Dwarf Explorers</li>
+                        <li>Shadow elves</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="brushNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.012 0.18"
+        numOctaves="4"
+        seed="7"
+        stitchTiles="stitch"
+        result="noise"/>
+      <feColorMatrix in="noise" type="matrix" result="asAlpha"
+        values="0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0.5 0.5 0.5 0 0"/>
+      <feComponentTransfer in="asAlpha" result="threshold">
+        <feFuncA type="discrete" tableValues="0 0 0 1 1"/>
+      </feComponentTransfer>
+    </filter>
+
+    <pattern id="brushPattern" width="400" height="100" patternUnits="userSpaceOnUse">
+      <rect width="400" height="100" fill="black" filter="url(#brushNoise)"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="white"/>
+  <rect width="100%" height="100%" fill="url(#brushPattern)"/>
+</svg>
+
+    <section id="about" class="mainGame">
+        <h1>About me</h1>
+        <p>Filling text for about section</p>
+    </section>
+
+    <section id="fantasySection" class="mainGame">
+        <h1>Warhammer Fantasy</h1>
+        <p class="mainGameComment">This is filling text for a main game</p>
+        <section id="DarkElvesSection" class="faction">
+            <h2>Dark elves</h2>
+            <p class="factionComments">This is filling text for a faction</p>
+            <div class="highlightedPictureArea">
+                <img class="highlightedPicture Picture" src="sources/stock2.jpg">
+                <p class="highlightedComments">This is filling text for a picture</p>
+            </div>
+            <h3>Other pictures</h3>
+            <div class="gallery">
+                <img class="Picture" src="sources/stock.jpg">
+                <img class="Picture" src="sources/stock2.jpg">
+                <img class="Picture" src="sources/stock.jpg">
+                <img class="Picture" src="sources/stock2.jpg">
+                <img class="Picture" src="sources/stock.jpg">
+                <img class="Picture" src="sources/stock2.jpg">
+                <img class="Picture" src="sources/stock.jpg">
+                <img class="Picture" src="sources/stock2.jpg">
+            </div>
+        </section>
+
+        <section id="FantasyBretonniaSection"class="faction">
+            <h2>Bretonnia</h2>
+        </section>  
+
+        <section id="LizardmenSection" class="faction">
+            <h2>Lizardmen</h2>
+        </section>  
+    </section>
+
+    
+    <section id="40KSection" class="mainGame">
+        <h1>Warhammer 40000</h1>
+        <section class="faction">
+            <h2>Eldar</h2>
+            <div class="gallery">
+                <img src="sources/stock.jpg">
+            </div>
+        </section>
+    </section>
+
+    
+    <section id="mordheimSection" class="mainGame">
+        <h1>Mordheim</h1>
+        <section class="faction">
+            <h2>Dwarf explorers</h2>
+            <div class="gallery">
+                <img src="sources/stock.jpg">
+            </div>
+        </section>
+    </section>
+
+    <a id="topAnchor" href="#header"><img class="smallIcon" src="sources/UpArrow_icon.webp"></a>
+
+    <footer>
+        <p>Website made real by the technical magic of Lord Magister <b>Erik</b> Ramón Conan <b>Mazón</b> Larson.</p>
+        <p>All pictures in this page are mine and no crawler is allowed to use them for AI training.</p>
+    </footer>
+    <!--Removed section, as it did not work as intended. Stored though, as maybe in the future it will be possible to use-->
+    <!--
+        <div id="offFlowImageDisplay">
+            <div id="darkerBackground"></div>
+            <div id="offFlowBackgroundImage"></div> <!-- Not an <img> as I want to edit it in css, so instead of src I use background-image
+        </div>
+    -->
+    
+</body>
+</html>
