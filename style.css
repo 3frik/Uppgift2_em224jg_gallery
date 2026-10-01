@@ -1,8 +1,9 @@
 :root{
-    --bgcolor: rgb(226, 225, 223);
-    --menuBgColor: rgb(223, 223, 200);
-    --menuBgContrastColor: rgb(216, 216, 155);
-    --textColor: rgb(10, 0, 19);
+    --bgcolor: rgb(129, 174, 157);
+    --bgcolorEven: rgb(196, 175, 154);
+    --menuBgColor: rgb(33, 161, 121);
+    --menuBgContrastColor: rgb(30, 30, 36);
+    --textColor: rgb(30, 30, 36);
     --maxSize:120px;
     --paddingBig: 30px;
     --paddingSmall:10px;
@@ -42,13 +43,22 @@ body{
         color:var(--textColor);
         padding: var(--paddingSmall);
         display:block;
+        transition: color 0.2s, background-color 0.2s;
 
         &:hover{
-            color:var(--menuBgColor);
+            color:var(--bgcolor);
             background-color: var(--textColor);    
         }
     }
 
+    section.mainGame:nth-child(even){
+        background-color: var(--bgcolorEven);
+    }
+
+    p{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 }
 
 
@@ -105,6 +115,7 @@ header{
             position:absolute;
             background-color: var(--menuBgColor);
             transform: translateY(3rem);
+            border:1px solid var(--textColor);
 
             li{
                 font-size: small;
@@ -155,6 +166,31 @@ header{
 }
 
 
+    #technicsArea{
+        display: flex;
+        flex-direction: row;
+        scrollbar-width:thin;
+        overflow-y: auto;
+        width: 100%;
+        height: auto;
+
+        div{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20vw;
+            min-width: 200px;
+            border: 1px solid var(--menuBgContrastColor);
+            margin: 3px;
+ 
+            img{
+                max-width: 80%;
+            }
+        }
+
+    }
+
+
 .mainGame{
     padding:10vw;
 
@@ -176,32 +212,48 @@ header{
         display:grid;
         justify-content: center;
         gap: var(--paddingSmall);
-        grid-template-columns: auto auto auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
         @Media only screen and (max-width:600px){
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto;
         }
     }
 
     /* Pictures will have some special interactions associated with them*/
-    .Picture{
-        width: 100%;
-        height:auto;
-        max-width: 60vw;
-        
-        &:hover{
-            position:fixed;
-            top:10px;
-            left:10vw;
-            width:80vw;
+    .PictureDiv{       
+        position:relative;
+
+        .Picture{
+            width: 100%;
             height:auto;
+            max-width: 60vw;            
+        }
+
+        span{
+            display:none;
+            border:1px solid var(--menuBgContrastColor);
+            background-color: var(--menuBgColor);
+            padding:10px;
+            margin:3px;
+        }
+
+        &:hover{
+            z-index:10;
+            grid-column: span 3;
+            grid-row: span 3;
+
+            span{
+                display:block;
+                position:absolute;
+                top:0;
+                left:0;
+            }
         }
 
         @Media only screen and (max-width: 600px){
-                width: 40vw;
-                height: auto;
-            }
-        
+            width: 40vw;
+            height: auto;
+        }
     }
 }
 
