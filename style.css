@@ -242,8 +242,9 @@ header{
             grid-column: span 3;
             grid-row: span 3;
 
+            
             span{
-                display:block;
+                display: block;
                 position:absolute;
                 top:0;
                 left:0;
@@ -256,6 +257,7 @@ header{
         }
     }
 }
+
 
 /* NOTE: This part is commented as a proof of what i tried to achieve and why it did not work*/
 
