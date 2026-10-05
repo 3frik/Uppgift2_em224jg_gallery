@@ -64,8 +64,12 @@ body{
         padding-top: 15px;
         padding-bottom: 15px;
     }
-}
 
+    *{
+        box-sizing: border-box; 
+        /* Note to me: This includes padding in width. Otherwise, padding adds to width. Why is not this as default? */
+    }
+}
 
 header{
     display:flex;
@@ -73,7 +77,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: var(--menuBgColor);
-    width: 96vw;
+    width: 100%;
     padding:var(--paddingBig);
 
     #faceContainer{
@@ -194,6 +198,7 @@ header{
 
 .mainGame{
     padding:10vw;
+    width:100%;
 
     .br{
         width:100%;
