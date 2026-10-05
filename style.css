@@ -1,14 +1,16 @@
 :root{
     --bgcolor: rgb(129, 174, 157);
-    --bgcolorEven: rgb(196, 175, 154);
     --menuBgColor: rgb(33, 161, 121);
-    --menuBgContrastColor: rgb(30, 30, 36);
+    --menuBgContrastColor: rgb(18, 77, 58);
+    --bgcolorEven: rgb(196, 175, 154);
+    --menuBgColorEven: rgb(146, 131, 114);
+    --menuBgContrastColorEven: rgb(78, 64, 50);
     --textColor: rgb(30, 30, 36);
     --maxSize:120px;
     --paddingBig: 30px;
     --paddingSmall:10px;
 
-    @Media only screen and (max-width:600px){
+    @media only screen and (max-width:600px){
         --paddingBig:15px;
         --paddingSmall:5px;
     }
@@ -52,7 +54,10 @@ body{
     }
 
     section.mainGame:nth-child(even){
-        background-color: var(--bgcolorEven);
+        --bgcolor: var(--bgcolorEven);
+        background-color: var(--bgcolor);
+        --menuBgColor : var(--menuBgColorEven);
+        --menuBgContrastColor:var(--menuBgContrastColorEven);
     }
 
     p{
@@ -128,7 +133,7 @@ header{
 
     }
     
-    @Media only screen and (max-width: 600px){
+    @media only screen and (max-width: 600px){
         h3{
             display:none;
         }
@@ -159,12 +164,9 @@ header{
                 display:block;
                 right:0;
             }
-            
-
         }
     }
 }
-
 
     #technicsArea{
         display: flex;
@@ -190,9 +192,16 @@ header{
 
     }
 
-
 .mainGame{
     padding:10vw;
+
+    .br{
+        width:100%;
+        height:5px;
+        background-color: var(--menuBgContrastColor);
+        margin-top: 5vh;
+        margin-bottom:5vh;
+    }
 
     .highlightedPictureArea{
         display:flex;
@@ -214,7 +223,7 @@ header{
         gap: var(--paddingSmall);
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
-        @Media only screen and (max-width:600px){
+        @media only screen and (max-width:600px){
             grid-template-columns: auto;
         }
     }
@@ -251,7 +260,7 @@ header{
             }
         }
 
-        @Media only screen and (max-width: 600px){
+        @media only screen and (max-width: 600px){
             width: 40vw;
             height: auto;
         }
