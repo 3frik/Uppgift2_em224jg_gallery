@@ -269,6 +269,10 @@ header{
                 span{
                     opacity:1;
                 }
+
+                @media only screen and (max-width: 900px){
+                    transform: scale(1.5);;
+                }
             }
         }
     }
