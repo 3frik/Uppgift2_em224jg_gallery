@@ -231,45 +231,49 @@ header{
         @media only screen and (max-width:600px){
             grid-template-columns: auto;
         }
-    }
 
-    /* Pictures will have some special interactions associated with them*/
-    .PictureDiv{       
-        position:relative;
-
-        .Picture{
-            width: 100%;
-            height:auto;
-            max-width: 60vw;            
-        }
-
-        span{
-            display:none;
-            border:1px solid var(--menuBgContrastColor);
-            background-color: var(--menuBgColor);
-            padding:10px;
-            margin:3px;
-        }
-
-        &:hover{
-            z-index:10;
-            grid-column: span 3;
-            grid-row: span 3;
-
+        .PictureDiv{       
+            position:relative;
+            width:100%;
+            transition: transform 0.5s;
             
+            .Picture{
+                width: 100%;
+                height:auto;
+                max-width: 60vw;            
+            }
+    
             span{
-                display: block;
+                opacity: 0;
+                border:1px solid var(--menuBgContrastColor);
+                background-color: var(--menuBgColor);
+                padding:10px;
+                margin:3px;
                 position:absolute;
                 top:0;
                 left:0;
+                transition: opacity 0.5s;
             }
         }
+        
+        &:has(.Picture:hover){
+            .PictureDiv{
+                transform:scale(0.8);
+            }
+            
+            .PictureDiv:hover{
+                
+                transform:scale(2);
+                z-index: 10;
 
-        @media only screen and (max-width: 600px){
-            width: 40vw;
-            height: auto;
+                span{
+                    opacity:1;
+                }
+            }
         }
     }
+
+    /* Pictures will have some special interactions associated with them*/
 }
 
 
