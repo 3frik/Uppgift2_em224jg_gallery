@@ -124,8 +124,8 @@ header{
             position:absolute;
             background-color: var(--menuBgColor);
             transform: translateY(3rem);
-            border:1px solid var(--textColor);
-
+            /*border:1px solid var(--textColor);
+*/
             li{
                 font-size: small;
             }
@@ -186,7 +186,8 @@ header{
             align-items: center;
             width: 20vw;
             min-width: 200px;
-            border: 1px solid var(--menuBgContrastColor);
+            /*border: 1px solid var(--menuBgContrastColor);*/
+            background-color: var(--menuBgColor);
             margin: 3px;
  
             img{
@@ -245,7 +246,7 @@ header{
     
             span{
                 opacity: 0;
-                border:1px solid var(--menuBgContrastColor);
+                /*border:1px solid var(--menuBgContrastColor);*/
                 background-color: var(--menuBgColor);
                 padding:10px;
                 margin:3px;
