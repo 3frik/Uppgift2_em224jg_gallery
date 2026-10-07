@@ -53,7 +53,7 @@ body{
         }
     }
 
-    section.mainGame:nth-child(even){
+    section.mainGame:nth-child(odd){
         --bgcolor: var(--bgcolorEven);
         background-color: var(--bgcolor);
         --menuBgColor : var(--menuBgColorEven);
